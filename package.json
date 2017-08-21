@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next",
     "build": "rimraf build && next build && next export -o build",
+    "deploy": "yarn build && git-directory-deploy --directory build --branch gh-pages",
     "prettier": "prettier --write --no-bracket-spacing --single-quote --jsx-bracket-same-line --trailing-comma es5 --print-width 80 \"**/*.js\"",
     "precommit": "lint-staged",
     "start": "next start"
@@ -16,6 +17,7 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "git-directory-deploy": "^1.5.1",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.3",
     "prettier": "^1.5.3",
